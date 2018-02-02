@@ -1,16 +1,15 @@
 package com.ocs.gts.service.impl;
 
-import javax.inject.Inject;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.ocs.dynamo.dao.BaseDao;
-import com.ocs.dynamo.dao.query.FetchJoinInformation;
+import com.ocs.dynamo.dao.FetchJoinInformation;
 import com.ocs.dynamo.service.impl.BaseServiceImpl;
 import com.ocs.gts.domain.Gift;
 import com.ocs.gts.domain.dao.GiftDao;
 import com.ocs.gts.service.GiftService;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
 
 @Transactional
 @Service("giftService")

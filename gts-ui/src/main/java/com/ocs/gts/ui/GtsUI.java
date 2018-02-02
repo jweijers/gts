@@ -5,6 +5,7 @@ import java.security.Principal;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.annotation.WebServlet;
 
+import com.ocs.dynamo.ui.utils.VaadinUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
@@ -115,12 +116,12 @@ public class GtsUI extends BaseUI {
 		center.addComponent(titleLayout);
 
 		// first line: application title
-		Label titleLabel = new Label("<b>" + messageService.getMessage("gts.application.name") + " v" + versionNumber
+		Label titleLabel = new Label("<b>" + messageService.getMessage("gts.application.name", VaadinUtils.getLocale()) + " v" + versionNumber
 		        + "</b>", ContentMode.HTML);
 		titleLayout.addComponent(titleLabel);
 
 		String userName = principal.getName();
-		titleLayout.addComponent(new Label(messageService.getMessage("gts.logged.in.as", userName), ContentMode.HTML));
+		titleLayout.addComponent(new Label(messageService.getMessage("gts.logged.in.as", VaadinUtils.getLocale(), userName), ContentMode.HTML));
 
 		banner.setExpandRatio(banner.getImage(), 0.3f);
 		banner.setExpandRatio(hCenter, 2.0f);

@@ -1,12 +1,13 @@
 package com.ocs.gts.ui.layout;
 
-import com.ocs.dynamo.dao.query.FetchJoinInformation;
+import com.ocs.dynamo.dao.FetchJoinInformation;
 import com.ocs.dynamo.domain.model.AttributeModel;
 import com.ocs.dynamo.domain.model.EntityModel;
 import com.ocs.dynamo.service.BaseService;
 import com.ocs.dynamo.ui.composite.form.DetailsEditTable;
-import com.ocs.dynamo.ui.composite.form.FormOptions;
+import com.ocs.dynamo.ui.composite.layout.FormOptions;
 import com.ocs.dynamo.ui.composite.layout.ServiceBasedSplitLayout;
+import com.ocs.dynamo.ui.container.QueryType;
 import com.ocs.gts.domain.Gift;
 import com.ocs.gts.domain.GiftTranslation;
 import com.vaadin.data.sort.SortOrder;
@@ -24,7 +25,7 @@ public class GiftLayout extends ServiceBasedSplitLayout<Integer, Gift> {
 
 	public GiftLayout(BaseService<Integer, Gift> service, EntityModel<Gift> entityModel, FormOptions formOptions,
 	        SortOrder sortOrder, FetchJoinInformation... joins) {
-		super(service, entityModel, formOptions, sortOrder, joins);
+		super(service, entityModel, QueryType.ID_BASED, formOptions, sortOrder, joins);
 	}
 
 	@Override
